@@ -2,6 +2,8 @@
 //add the  y next index of the x and if x is not found add the elemnet at the end of the array
 
 #include<iostream>
+#include<vector>
+#include<algorithm>
 using namespace std;
 
 int main(){
@@ -15,24 +17,31 @@ int main(){
     cin>>y;
     bool flag = false;
 
-    for(int i=0;i>size;i++){
+    for(int i=0;i<size;i++){
         if(arr[i] == x){
             for(int j=size;j>i;j--){
-                arr[j] = arr[j+1];
+                arr[j] = arr[j-1];
             }
         arr[i+1] = y; 
         flag = true;
+        size++;
+        break;
         }
     }
-    size++;
+    
 
     if(flag){
         cout<<"Sucessfully done!"<<endl;
-    }
-    else{
-        arr[size] = y;
-        for(int i=0;i<size+1;i++){
+        for(int i=0;i<size;i++){
             cout<<arr[i]<<" ";
         }
     }
+    else{
+        arr[size] = y;
+        size++;
+        for(int i=0;i<size;i++){
+            cout<<arr[i]<<" ";
+        }
+    }
+
 }
