@@ -66,7 +66,7 @@ int main(){
     cout<<endl;
     
     
-    //printing alternative element
+    // printing alternative element
     // temp = head;
     // while(temp!= NULL){
     //     if(temp->next->next ==NULL){
